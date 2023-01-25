@@ -16,9 +16,9 @@ Progetto completamente scritto in PHP per il parsing dei dati di ViaggiaTreno
 
 
 Script di base
----
+```
 <?php
 require 'trenitalia-php/api.php';
 
 // Funzioni...
----
+```
