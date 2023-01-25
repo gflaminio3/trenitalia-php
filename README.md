@@ -6,7 +6,10 @@ Progetto completamente scritto in PHP per il parsing dei dati di ViaggiaTreno
 2. php-curl
 3. php-json
 
-# Funzionalità
+# Funzioni
+| Nome | Input | Descrizione |
+| --- | --- | --- |
+| findStationCode() | string | Trova il codice viaggiatreno della stazione richiesta 
 
 
 Script di base
