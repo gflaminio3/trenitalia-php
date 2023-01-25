@@ -27,6 +27,7 @@ echo 'Code is: ' . $code;
 
 // Recupera il tabellone aggiornato
 $board = getStationBoard($code);
+
 // stampa un json con partenze/arrivi
 echo $board; 
 ```
