@@ -31,9 +31,9 @@ $board = getStationBoard($code);
 // Stampa un json con partenze/arrivi
 echo $board; 
 
-// Stampa tutte le soluzioni di viaggio (Caserta-Napoli) a partire dalla data di esecuzione
+// Stampa tutte le soluzioni di viaggio (Caserta-Napoli Centrale) a partire dalla data di esecuzione
 echo searchSolution('S09211', 'S09218', NULL);
 
-// Stampa tutte le soluzioni di viaggio (Caserta-Napoli) per il giorno 30/01/2023 alle 08:00
+// Stampa tutte le soluzioni di viaggio (Caserta-Napoli Centrale) per il giorno 30/01/2023 alle 08:00
 echo searchSolution('S09211', 'S09218', 1675065600);
 ```
