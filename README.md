@@ -32,8 +32,8 @@ $board = getStationBoard($code);
 echo $board; 
 
 // Stampa tutte le soluzioni di viaggio (Caserta-Napoli) a partire dalla data di esecuzione
-searchSolution('S09211', 'S09218', NULL);
+echo searchSolution('S09211', 'S09218', NULL);
 
 // Stampa tutte le soluzioni di viaggio (Caserta-Napoli) per il giorno 30/01/2023 alle 08:00
-searchSolution('S09211', 'S09218', 1675065600);
+echo searchSolution('S09211', 'S09218', 1675065600);
 ```
