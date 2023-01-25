@@ -8,7 +8,7 @@ Progetto completamente scritto in PHP per il parsing dei dati di ViaggiaTreno
 
 # Funzioni
 | Nome | Input | Descrizione | Output |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | findStationCode() | string | Trova il codice viaggiatreno della stazione richiesta | string
 | getStationDatabase() | / | Stampa il Database delle stazioni | json
 | searchSolution() | string,string | Dati in input i valori di due stazioni, stampa le soluzioni di viaggio per il giorno corrente | json
