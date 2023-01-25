@@ -1,2 +1,2 @@
 # trenitalia-php
-REST-FUL API for ViaggiaTreno
+REST API for ViaggiaTreno
