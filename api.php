@@ -43,8 +43,8 @@ function getStationBoard($id) {
         ];
     }
 
-    $fromStation = json_decode(file_get_contents('http://www.viaggiatreno.it/infomobilita/resteasy/viaggiatreno/arrivi/' . $id . '/' . $today), TRUE);
-    foreach ($fromStation as $train) {
+    $toStation = json_decode(file_get_contents('http://www.viaggiatreno.it/infomobilita/resteasy/viaggiatreno/arrivi/' . $id . '/' . $today), TRUE);
+    foreach ($toStation as $train) {
         $board['arrivals'][] = [
             'name' => $train['compNumeroTreno'],
             'type' => $train['compTipologiaTreno'],
