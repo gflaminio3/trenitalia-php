@@ -20,5 +20,12 @@ Script di base
 <?php
 require 'trenitalia-php/api.php';
 
-// Funzioni...
+// Esempio per la stazione di Caserta
+$name = 'caserta';
+$code = findStationCode($name);
+echo 'Code is: ' . $code;
+
+// Recupera il tabellone aggiornato
+$board = getStationBoard($code);
+echo $board; // stampa un json con partenze/arrivi
 ```
