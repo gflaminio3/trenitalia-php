@@ -16,11 +16,6 @@
                 <div class="mb-3">
                     <input type="text" id="search" name="search" class="form-control">
                 </div>
-                <div class="mb-3">
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-primary" type="submit">Search</button>
-                    </div>
-                </div>
             </div>
         </form>
         <div class="list-group ul" id="results"></div>
@@ -28,37 +23,57 @@
 
     <script>
         $(document).ready(function() {
+            // Cache DOM elements
+            var $search = $("#search");
+            var $results = $("#results");
+
             // Load the JSON file
-            $.getJSON('data/viaggiaTrenoStations.json', function(data) {
+            $.getJSON("data/viaggiaTrenoStations.json", function(data) {
                 // Save the data in a variable
                 var cities = data;
 
-                // Listen for the form submission
-                $('form').submit(function(event) {
-                    // Prevent the default form submission behavior
-                    event.preventDefault();
-
+                // Listen for keyup events on the search input field
+                $search.on("keyup", debounce(function() {
                     // Get the search term from the input field
-                    var searchTerm = $('#search').val().toUpperCase();
+                    var searchTerm = $search.val().toUpperCase();
 
                     // Clear any previous search results
-                    $('#results').empty();
+                    $results.empty();
 
                     // Display the search results
                     var found = false;
                     for (var city in cities) {
                         if (city.toUpperCase().indexOf(searchTerm) !== -1) {
                             found = true;
-                            $('#results').append('<li>' + '<a href="board.php?code=' + cities[city] + '">' + city + '</a>' + '</li>');
+                            $results.append(
+                                '<li><a href="board.php?code=' + cities[city] + '">' + city + "</a></li>"
+                            );
                         }
                     }
 
                     // Display a message if no results were found
                     if (!found) {
-                        $('#results').append('<li>No results found.</li>');
+                        $results.append("<li>No results found.</li>");
                     }
-                });
+                }, 250));
             });
+
+            // Debounce function
+            function debounce(func, wait, immediate) {
+                var timeout;
+                return function() {
+                    var context = this,
+                        args = arguments;
+                    var later = function() {
+                        timeout = null;
+                        if (!immediate) func.apply(context, args);
+                    };
+                    var callNow = immediate && !timeout;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                    if (callNow) func.apply(context, args);
+                };
+            }
         });
     </script>
 </body>
