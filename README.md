@@ -1,3 +1,5 @@
+# DEPRECATED
+
 # trenitalia-php
 Progetto completamente scritto in PHP per il parsing dei dati di ViaggiaTreno
 
